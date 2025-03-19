@@ -52,7 +52,7 @@
               name="Base Syrup"
               :id="`r${syrup.id}`"
               :value="syrup.color"
-              v-model="currentsyrup"
+              v-model="currentSyrup"
             />
             {{ syrup.name }}
           </label>
@@ -62,7 +62,6 @@
   </div>
 </template>
 
-
 <script setup lang="ts">
 import Beverage from './components/Beverage.vue';
 import { temps, currentTemp } from './stores/beverage';
@@ -70,7 +69,6 @@ import { bases, currentBase } from './stores/beverage';
 import { creamers, currentCreamer } from './stores/beverage';
 import { syrups, currentSyrup } from './stores/beverage';
 </script>
-
 
 <style lang="scss">
 body,
