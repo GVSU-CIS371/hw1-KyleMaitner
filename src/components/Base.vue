@@ -7,11 +7,10 @@ import { currentBase } from '../stores/beverage';
 import { computed } from 'vue';
 
 const constantStyle = computed(() => {
-  return{
-    backgroundColor : currentBase.value,
+  return {
+    backgroundColor: currentBase.value,
   };
 });
-
 </script>
 
 <style scoped>
