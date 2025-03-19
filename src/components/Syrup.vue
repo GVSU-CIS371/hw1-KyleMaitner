@@ -1,26 +1,16 @@
-
 <template>
   <div class="syrup" :style="{ backgroundColor: currentSyrup }"></div>
-  <button @click="changeColor">Change Color</button>
 </template>
 
-
 <script setup lang="ts">
-import { useBeverageStore } from '../stores/beverage';
-
-
-const { currentSyrup, setSyrupColor } = useBeverageStore();
-
-
-const changeColor = () => {
-  setSyrupColor('#ff6347'); // Example: Change to tomato red
-};
+import { currentSyrup } from '../stores/beverage';
+import { computed } from 'vue';
 </script>
-
 
 <style lang="scss" scoped>
 .syrup {
   transform: translateY(400%);
+  background-color: #c6c6c6;
   position: relative;
   width: 100%;
   height: 20%;
@@ -28,4 +18,3 @@ const changeColor = () => {
   z-index: 2;
 }
 </style>
-
