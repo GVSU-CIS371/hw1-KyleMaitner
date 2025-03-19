@@ -1,8 +1,17 @@
 <template>
-  <div class="baseBeverage"></div>
+  <div class="baseBeverage" :style="{ backgroundColor: currentBase }"></div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { currentBase } from '../stores/beverage';
+import { computed } from 'vue';
+
+const constantStyle = computed(() => {
+  return {
+    backgroundColor: currentBase.value,
+  };
+});
+</script>
 
 <style scoped>
 .baseBeverage {
