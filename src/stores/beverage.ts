@@ -1,23 +1,4 @@
 import { ref, Ref } from 'vue';
-import { defineStore } from 'pinia';
-
-
-
-export const useBeverageStore = defineStore('beverage', () => {
-  const currentSyrup = ref('#c6c6c6'); // Initial color
-
-
-  const setSyrupColor = (color: string) => {
-    currentSyrup.value = color;
-  };
-
-
-  return { currentSyrup, setSyrupColor };
-});
-
-
-
-
 
 interface BaseBeverageType {
   id: string;
@@ -25,13 +6,11 @@ interface BaseBeverageType {
   color: string;
 }
 
-
 interface CreamerType {
   id: string;
   name: string;
   color: string;
 }
-
 
 interface SyrupType {
   id: string;
@@ -39,9 +18,7 @@ interface SyrupType {
   color: string;
 }
 
-
 const temps: Ref<string[]> = ref(['Hot', 'Cold']);
-
 
 const bases: Ref<BaseBeverageType[]> = ref([
   {
@@ -60,7 +37,6 @@ const bases: Ref<BaseBeverageType[]> = ref([
     color: '#6F4E37',
   },
 ]);
-
 
 const creamers: Ref<CreamerType[]> = ref([
   {
@@ -85,7 +61,6 @@ const creamers: Ref<CreamerType[]> = ref([
   },
 ]);
 
-
 const syrups: Ref<SyrupType[]> = ref([
   {
     id: 's1',
@@ -109,12 +84,10 @@ const syrups: Ref<SyrupType[]> = ref([
   },
 ]);
 
-
 const currentTemp = ref(temps.value[1]);
 const currentBase = ref(bases.value[1]);
-const currentCreamer = ref(creamers.value[1]);
-const currentSyrup = ref(syrups.value[1]);
-
+const currentCreamer = ref(creamers.value[1].color);
+const currentSyrup = ref(syrups.value[1].color);
 
 export type { BaseBeverageType, CreamerType, SyrupType };
 export { temps, bases, creamers, syrups };
